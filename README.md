@@ -15,8 +15,7 @@ TravelTrucks is a modern web application developed for a camper rental company. 
 ---
 
 ## 🔗 Demo & Source
-- **Live Demo:** [Add your Vercel/Netlify link here]
-- **GitHub Repo:** [This repository]
+- **Live Demo:** https://wander-truck.netlify.app
 
 ---
 
