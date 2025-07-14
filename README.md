@@ -48,27 +48,6 @@ TravelTrucks is a modern web application developed for a camper rental company. 
 - Node.js (14.x+)
 - npm
 
-### Installation
-```bash
-git clone https://github.com/k-zozulia/TravelTrucks.git
-cd TravelTrucks-main
-npm install
-```
-
-### Development Server
-```bash
-npm run dev
-# Opens at http://localhost:5173
-```
-
-### Build & Preview
-```bash
-npm run build
-npm run preview
-```
-
----
-
 ## 🌐 API
 - [MockAPI](https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers)
   - `GET /campers` : Fetch all listings (filtering is handled by backend)
