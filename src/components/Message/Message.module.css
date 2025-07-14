@@ -1,0 +1,29 @@
+.message {
+  font-size: 1.125rem;
+  font-weight: 500;
+  padding: 1rem 0;
+  text-align: center;
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.info {
+  color: var(--color-text);
+  background-color: var(--color-background-info);
+}
+
+.error {
+  color: var(--color-error-text);
+  background-color: var(--color-error-background);
+}
+
+.success {
+  color: var(--color-success-text);
+  background-color: var(--color-success-background);
+}
+
+@media (min-width: 768px) {
+  .message {
+    padding: 1.5rem 0;
+  }
+}

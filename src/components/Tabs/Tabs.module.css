@@ -1,0 +1,55 @@
+.wrapper {
+  --tab-gap: 40px;
+  --tab-height: 48px;
+  --underline-height: 5px;
+  --underline-offset: 3px;
+  --font-size: 1.25rem;
+
+  display: flex;
+  gap: var(--tab-gap);
+  height: var(--tab-height);
+  border-bottom: 1px solid var(--color-grey-light);
+}
+
+.tab {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: var(--font-family-bold);
+  font-size: var(--font-size);
+  line-height: 1.5;
+  color: var(--color-main);
+  position: relative;
+  text-transform: capitalize;
+  transition: color 0.2s ease;
+}
+
+.tab:hover,
+.tab:focus-visible {
+  color: var(--color-button-hover);
+  outline: none;
+}
+
+.tab::before {
+  content: "";
+  position: absolute;
+  bottom: calc(-1 * var(--underline-offset));
+  left: 0;
+  width: 100%;
+  height: var(--underline-height);
+  background: var(--color-button);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.tab:hover::before,
+.tab:focus-visible::before,
+.active::before {
+  transform: scaleX(1);
+}
+
+.active {
+  color: var(--color-button);
+}

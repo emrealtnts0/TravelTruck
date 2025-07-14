@@ -1,0 +1,5 @@
+.wrapper {
+  display: flex;
+  gap: 2.75rem; 
+  flex-direction: column;
+}

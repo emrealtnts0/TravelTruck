@@ -1,0 +1,134 @@
+.wrapper {
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+}
+.section {
+  display: flex;
+  gap: 32px;
+  flex-direction: column;
+}
+.sectionName {
+  font-family: "Inter Medium", Arial, sans-serif;
+}
+.loadmore {
+  text-align: center;
+  margin-top: 8px;
+}
+.sectionGroupname {
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--color-main);
+  font-family: "Inter Bold", Arial, sans-serif;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--color-grey-light);
+  margin-bottom: 24px;
+}
+.filterList {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 6px;
+  column-gap: 6px;
+}
+.equipment {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-grey-light);
+  outline: none;
+  width: 112px;
+  height: 96px;
+  background-color: var(--color-white);
+  cursor: pointer;
+  transition: all var(--trns-fast);
+  border-radius: 12px;
+}
+
+.equipment svg {
+  flex-shrink: 0;
+  height: 28px;
+  width: 28px;
+}
+
+.equipmentActive,
+.equipment:hover {
+  border: 1px solid var(--color-button);
+}
+
+.locationInput {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.locationIcon {
+  position: absolute;
+  left: 16px;
+  font-size: 18px;
+  color: var(--color-grey);
+}
+
+.locationField {
+  padding: 14px 16px 14px 44px;
+  border: 1px solid var(--color-grey-light);
+  border-radius: 12px;
+  width: 100%;
+  font-size: 16px;
+  font-family: inherit;
+  color: var(--color-main);
+  background-color: var(--color-white);
+  transition: border-color var(--trns-fast);
+}
+
+.locationField::placeholder {
+  color: var(--color-grey);
+  opacity: 1;
+}
+
+.locationField:focus {
+  outline: none;
+  border-color: var(--color-button);
+}
+
+@media only screen and (min-width: 768px) {
+  .filterList {
+    row-gap: 8px;
+    column-gap: 12px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .wrapper {
+    gap: 20px;
+    padding: 12px 0;
+  }
+  .section {
+    gap: 16px;
+  }
+  .sectionName {
+    font-size: 1rem;
+  }
+  .filterList {
+    row-gap: 4px;
+    column-gap: 4px;
+  }
+  .equipment {
+    width: 80px;
+    height: 64px;
+    font-size: 0.85rem;
+    padding: 4px;
+    gap: 4px;
+  }
+  .equipment svg {
+    width: 20px;
+    height: 20px;
+  }
+  .locationField {
+    font-size: 14px;
+    padding: 10px 12px 10px 36px;
+  }
+}

@@ -1,0 +1,40 @@
+.wrapper {
+  --top-padding: 3.25rem;
+  --bottom-padding: 5rem;
+  --mobile-gap: 2rem;
+  --desktop-gap: 4rem;
+  --sidebar-width: 22.5rem;
+
+  padding: var(--top-padding) 0 var(--bottom-padding);
+  display: flex;
+  gap: var(--mobile-gap);
+  flex-direction: column;
+}
+
+.sidebar {
+  order: 2;
+}
+
+.content {
+  order: 1;
+}
+
+@media (min-width: 1440px) {
+  .wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--desktop-gap);
+  }
+
+  .sidebar {
+    flex: 0 0 var(--sidebar-width);
+    position: sticky;
+    top: 1rem;
+    order: 1;
+  }
+
+  .content {
+    flex: 1;
+    order: 2;
+  }
+}

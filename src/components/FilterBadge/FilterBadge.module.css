@@ -1,0 +1,47 @@
+.badge {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding: 12px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-grey-light);
+  color: var(--color-main);
+  outline: none;
+  background-color: var(--color-white);
+  cursor: pointer;
+  transition: border var(--trns-fast);
+  border-radius: 100px;
+}
+
+.badge svg {
+  flex-shrink: 0;
+  height: 20px;
+  width: 20px;
+}
+
+.active,
+.badge:hover {
+  border: 1px solid var(--color-button);
+}
+
+.badge:focus-visible {
+  border: 1px solid var(--color-button);
+}
+
+@media only screen and (min-width: 768px) {
+  .badge {
+    flex-direction: column;
+    gap: 10px;
+    padding: 8px;
+    width: 112px;
+    height: 96px;
+    background-color: var(--color-white);
+    border-radius: 12px;
+  }
+
+  .badge svg {
+    height: 28px;
+    width: 28px;
+  }
+}

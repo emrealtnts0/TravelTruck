@@ -1,0 +1,91 @@
+.button {
+  --button-padding: 16px 32px;
+  --button-height: 56px;
+  --button-min-width: 156px;
+  --button-radius: 200px;
+
+  outline: none;
+  padding: var(--button-padding);
+  height: var(--button-height);
+  min-width: var(--button-min-width);
+  cursor: pointer;
+  transition: all var(--trns-fast);
+  border-radius: var(--button-radius);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font: inherit;
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.button:not(.disabled):hover,
+.button:not(.disabled):focus-visible {
+  transform: scale(1.04);
+  box-shadow: 0 4px 16px rgba(211,47,47,0.10);
+  filter: brightness(1.03);
+}
+
+.button:not(.disabled):active {
+  transform: scale(0.97);
+  filter: brightness(0.98);
+}
+
+.primary {
+  background-color: var(--color-button);
+  color: var(--color-white);
+  border-color: var(--color-button);
+}
+
+.primary:not(.disabled):hover,
+.primary:not(.disabled):focus-visible {
+  background-color: var(--color-button-hover);
+  border-color: var(--color-button-hover);
+}
+
+.secondary {
+  background-color: var(--color-white);
+  color: var(--color-main);
+  border-color: var(--color-grey-light);
+}
+
+.secondary:not(.disabled):hover,
+.secondary:not(.disabled):focus-visible {
+  border-color: var(--color-button-hover);
+}
+
+.disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+  filter: grayscale(0.2) brightness(0.95);
+}
+
+/* Ripple effect */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 0.5s linear;
+  background-color: rgba(211,47,47,0.25);
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+.text {
+  background: transparent;
+  border: none;
+  min-width: auto;
+  padding: 0;
+}

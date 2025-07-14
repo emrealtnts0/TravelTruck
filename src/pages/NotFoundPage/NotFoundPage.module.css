@@ -1,0 +1,28 @@
+.wrapper {
+  --top-padding: 52px;
+  --bottom-padding: 80px;
+
+  padding: var(--top-padding) 0 var(--bottom-padding);
+  text-align: center;
+}
+
+.title {
+  color: var(--color-error);
+  margin-bottom: 24px;
+  font-size: 2rem;
+}
+
+.message {
+  font-size: 1.2rem;
+  color: var(--color-text-secondary);
+}
+
+.link {
+  color: var(--color-primary);
+  text-decoration: underline;
+  transition: color var(--transition-fast);
+}
+
+.link:hover {
+  color: var(--color-primary-hover);
+}

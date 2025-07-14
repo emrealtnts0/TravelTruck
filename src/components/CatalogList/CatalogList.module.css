@@ -1,0 +1,30 @@
+.wrapper {
+  --gap: 2rem;
+  --load-more-margin: 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.loadMore {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--load-more-margin);
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    --gap: 1.5rem;
+  }
+}

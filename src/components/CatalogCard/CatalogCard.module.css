@@ -1,0 +1,98 @@
+.cardWrapper {
+  --card-padding: 1.5rem;
+  --card-gap: 1.5rem;
+  --card-radius: 1.25rem;
+  --mobile-gap: 1.5rem;
+  --desktop-gap: 2rem; 
+  --max-content-width: 32.75rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--mobile-gap);
+  border: 1px solid var(--color-badgets);
+  padding: var(--card-padding);
+  border-radius: var(--card-radius);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cardWrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--card-gap);
+  width: 100%;
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; 
+}
+
+.titleRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.priceRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.favoriteButton {
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  cursor: pointer;
+  color: var(--color-grey);
+  transition: all var(--transition-fast);
+  font-size: 1.25rem;
+}
+
+.favoriteButton:hover,
+.favoriteButton:focus-visible {
+  color: var(--color-error);
+  outline: none;
+}
+
+.favorited {
+  color: var(--color-error);
+}
+
+.description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5;
+}
+
+.buttonWrapper {
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .titleRow {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1440px) {
+  .cardWrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--desktop-gap);
+  }
+
+  .cardContent {
+    max-width: var(--max-content-width);
+  }
+}

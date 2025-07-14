@@ -1,0 +1,37 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.badge {
+  display: flex;
+  font-family: "Inter Medium", Arial, sans-serif;
+  flex-direction: row;
+  background-color: var(--color-badgets);
+  padding: 12px;
+  gap: 8px;
+  color: var(--color-main);
+  border-radius: 100px;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+}
+
+.icon {
+  flex-shrink: 0;
+  display: flex;
+}
+
+.badge svg {
+  height: 20px;
+  width: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .badge {
+    padding: 14px 18px;
+  }
+}
