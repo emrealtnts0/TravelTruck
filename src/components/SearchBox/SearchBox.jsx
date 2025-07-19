@@ -36,6 +36,7 @@ const SearchBox = ({ onChange, value }) => {
             id={searchFieldId}
             name="search"
             type="text"
+            className={fieldsCss.input}
             onFocus={handleFocus(true)}
             onBlur={handleFocus(false)}
             value={value}

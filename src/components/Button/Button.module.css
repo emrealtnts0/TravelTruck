@@ -9,7 +9,7 @@
   height: var(--button-height);
   min-width: var(--button-min-width);
   cursor: pointer;
-  transition: all var(--trns-fast);
+  transition: all 0.18s cubic-bezier(0.4,0,0.2,1);
   border-radius: var(--button-radius);
   text-decoration: none;
   display: inline-flex;
@@ -20,25 +20,28 @@
   border: 1px solid transparent;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(228, 72, 72, 0.10);
 }
 
 .button:not(.disabled):hover,
 .button:not(.disabled):focus-visible {
   transform: scale(1.04);
-  box-shadow: 0 4px 16px rgba(211,47,47,0.10);
+  box-shadow: 0 4px 16px rgba(228, 72, 72, 0.18);
   filter: brightness(1.03);
 }
 
 .button:not(.disabled):active {
   transform: scale(0.97);
   filter: brightness(0.98);
+  box-shadow: 0 1px 4px rgba(228, 72, 72, 0.08);
 }
 
 .primary {
   background-color: var(--color-button);
-  color: var(--color-white);
+  color: #fff;
   border-color: var(--color-button);
+  font-family: var(--font-family-bold);
+  font-size: 1.05rem;
 }
 
 .primary:not(.disabled):hover,
@@ -88,4 +91,18 @@
   border: none;
   min-width: auto;
   padding: 0;
+}
+
+:global([data-theme="dark"]) .primary {
+  background: var(--color-button);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(255, 92, 92, 0.18);
+}
+:global([data-theme="dark"]) .primary:hover, :global([data-theme="dark"]) .primary:focus-visible {
+  background: var(--color-accent-hover);
+  box-shadow: 0 4px 16px rgba(255, 92, 92, 0.28);
+}
+:global([data-theme="dark"]) .primary:active {
+  background: #c13b3b;
+  box-shadow: 0 1px 4px rgba(255, 92, 92, 0.10);
 }

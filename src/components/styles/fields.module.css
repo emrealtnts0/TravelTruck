@@ -1,12 +1,23 @@
+:root {
+  --field-bg-light: var(--color-inputs);
+  --field-text-light: var(--color-main);
+  --field-placeholder-light: var(--color-grey);
+}
+[data-theme="dark"] {
+  --field-bg-light: var(--color-inputs);
+  --field-text-light: var(--color-text);
+  --field-placeholder-light: var(--color-placeholder);
+}
+
 .fieldRow {
   --field-gap: 0.5rem;
   --field-padding: 1rem 1.25rem;
   --field-radius: 0.75rem;
   --field-height: 3.5rem;
   --error-color: var(--color-error);
-  --text-color: var(--color-main);
-  --placeholder-color: var(--color-grey);
-  --bg-color: var(--color-inputs);
+  --text-color: var(--field-text-light);
+  --placeholder-color: var(--field-placeholder-light);
+  --bg-color: var(--field-bg-light);
 
   display: flex;
   flex-direction: column;
@@ -22,11 +33,18 @@
   min-height: var(--field-height);
   padding: var(--field-padding);
   border-radius: var(--field-radius);
-  transition: all 0.2s ease;
+  border: 1.5px solid var(--color-border);
+  box-shadow: none;
+  transition: border 0.2s, box-shadow 0.2s;
 }
 
 .fieldFocused {
-  box-shadow: 0 0 0 2px var(--color-primary-light);
+  border: 1.5px solid var(--color-accent);
+  box-shadow: 0 0 0 2px rgba(255,92,92,0.15);
+}
+
+[data-theme="dark"] .field {
+  border: 1.5px solid #44474F;
 }
 
 .fieldError {
@@ -37,6 +55,10 @@
   color: var(--placeholder-color);
   flex-shrink: 0;
   transition: color 0.2s ease;
+}
+
+:global([data-theme="dark"]) .label {
+  color: #E0E0E0;
 }
 
 .fieldFocused .label {
@@ -75,7 +97,34 @@
 }
 
 .error {
-  color: var(--error-color);
-  font-size: 0.875rem;
-  padding-left: 0.25rem;
+  color: #fff;
+  background: #FF5C5C;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.75rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  box-shadow: 0 2px 8px rgba(255,92,92,0.10);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  display: inline-block;
+  animation: fadeInError 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+@keyframes fadeInError {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fieldRow label {
+  color: var(--color-main);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+}
+
+:global([data-theme="dark"]) .fieldRow label {
+  color: #fff;
 }

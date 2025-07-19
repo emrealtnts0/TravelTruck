@@ -1,5 +1,7 @@
 export const formatPrice = (x, currency = "€") => {
-  return `${currency}${Number(x).toFixed(2)}`;
+  if (x == null || isNaN(Number(x))) return "-";
+  // Binlik ayraçlı, küsuratsız ve para birimi sonda
+  return `${Number(x).toLocaleString(undefined, { maximumFractionDigits: 0 })} ${currency}`;
 };
 
 export const formatDate = (date) => {

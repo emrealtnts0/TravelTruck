@@ -10,14 +10,35 @@
   display: flex;
   font-family: "Inter Medium", Arial, sans-serif;
   flex-direction: row;
-  background-color: var(--color-badgets);
+  background-color: var(--color-card);
   padding: 12px;
   gap: 8px;
-  color: var(--color-main);
-  border-radius: 100px;
+  color: var(--color-text);
+  border-radius: 1rem;
   align-items: center;
   justify-content: center;
   text-transform: capitalize;
+  border: 1.5px solid var(--color-border);
+  transition: background 0.2s, color 0.2s, border 0.2s, transform 0.15s;
+}
+
+.badge:hover, .badge:focus {
+  background-color: var(--color-primary-light);
+  border: 1.5px solid var(--color-accent);
+  color: var(--color-main);
+  transform: scale(1.03);
+}
+
+[data-theme="dark"] .badge {
+  background-color: #23262F;
+  color: #F1F1F1;
+  border: 1.5px solid #44474F;
+}
+[data-theme="dark"] .badge:hover, [data-theme="dark"] .badge:focus {
+  background-color: #292C36;
+  border: 1.5px solid var(--color-accent);
+  color: var(--color-accent);
+  transform: scale(1.03);
 }
 
 .icon {

@@ -1,0 +1,14 @@
+.toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  border-radius: 50%;
+  transition: background 0.2s;
+  color: var(--color-text);
+}
+.toggle:hover, .toggle:focus {
+  background: var(--color-card);
+  outline: none;
+} 

@@ -9,6 +9,16 @@
   gap: var(--tab-gap);
   height: var(--tab-height);
   border-bottom: 1px solid var(--color-grey-light);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 0 24px;
+  margin-bottom: 32px;
+  align-items: center;
+}
+:global([data-theme="dark"]) .wrapper {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
 }
 
 .tab {
@@ -23,6 +33,10 @@
   position: relative;
   text-transform: capitalize;
   transition: color 0.2s ease;
+}
+
+:global([data-theme="dark"]) .tab {
+  color: #E0E0E0;
 }
 
 .tab:hover,
@@ -51,5 +65,9 @@
 }
 
 .active {
+  color: var(--color-button);
+}
+
+:global([data-theme="dark"]) .active {
   color: var(--color-button);
 }

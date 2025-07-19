@@ -1,3 +1,4 @@
+/* Light mode (default) */
 :root {
   --trns-slow: 600ms ease-out;
   --trns-fast: 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -13,7 +14,6 @@
   --color-button: #e44848;
   --color-button-hover: #d84343;
   --color-inputs: #f7f7f7;
-  --color-rating: #ffc531;
   --color-white: #ffffff;
   --color-border: #dadde1;
   --color-primary-light: #f7e0e0;
@@ -27,10 +27,30 @@
   --color-background-secondary: #f7f7f7;
   --color-background-tertiary: #e0e0e0;
   --color-icon-inactive: #6c717b;
+  --color-rating: #FFD700;
   --font-family-regular: "Inter Regular", Arial, sans-serif; 
   --font-family-medium: "Inter Medium", Arial, sans-serif;
   --font-family-bold: "Inter Bold", Arial, sans-serif;
   --font-family-extrabold: "Inter ExtraBold", Arial, sans-serif;
+}
+
+/* Dark mode */
+[data-theme="dark"] {
+  --color-bg: #181A20;
+  --color-card: #23262F;
+  --color-inputs: #23262F;
+  --color-border: #2C2F36;
+  --color-text: #F1F1F1;
+  --color-placeholder: #44474F;
+  --color-header: #23262F;
+  --color-badgets: #2C2F36;
+  --color-error: #FF5C5C;
+  --color-accent: #FF5C5C;
+  --color-accent-hover: #FF7B7B;
+  --color-success: #4ADE80;
+  --color-rating: #FFD700;
+  --color-button: #FF5C5C;
+  --color-button-hover: #FF7B7B;
 }
 
 @font-face {
@@ -74,6 +94,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: var(--color-text);
+  background: var(--color-bg);
 }
 
 h1,
@@ -136,6 +157,19 @@ h3 {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   margin: -1px;
+}
+
+input,
+textarea,
+select {
+  background: var(--color-inputs);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-placeholder);
 }
 
 input,

@@ -10,8 +10,14 @@
   outline: none;
   background-color: var(--color-white);
   cursor: pointer;
-  transition: border var(--trns-fast);
+  transition: border var(--trns-fast), background 0.2s, color 0.2s;
   border-radius: 100px;
+}
+
+:global([data-theme="dark"]) .badge {
+  background-color: var(--color-card);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
 }
 
 .badge svg {
@@ -23,6 +29,11 @@
 .active,
 .badge:hover {
   border: 1px solid var(--color-button);
+}
+
+:global([data-theme="dark"]) .active,
+:global([data-theme="dark"]) .badge:hover {
+  border: 1px solid var(--color-accent);
 }
 
 .badge:focus-visible {
@@ -39,7 +50,9 @@
     background-color: var(--color-white);
     border-radius: 12px;
   }
-
+  :global([data-theme="dark"]) .badge {
+    background-color: var(--color-card);
+  }
   .badge svg {
     height: 28px;
     width: 28px;

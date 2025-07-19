@@ -6,6 +6,8 @@ import Button from "../Button/Button";
 import FieldInput from "../FieldInput/FieldInput";
 import DatePickerInput from "../DatePickerInput/DatePickerInput";
 import styles from "./BookForm.module.css";
+import { useState } from "react";
+import { FaPaperPlane } from "react-icons/fa";
 
 const validationText = {
   required: () => "This field is required",
@@ -45,23 +47,30 @@ const initialValues = {
 };
 
 const BookForm = () => {
+  const [formStatus, setFormStatus] = useState(null); // 'success' | 'error' | null
+  const [formMessage, setFormMessage] = useState("");
+
   const handleSubmit = async (values, { resetForm, setSubmitting }) => {
+    setFormStatus(null);
+    setFormMessage("");
     try {
       setSubmitting(true);
       await new Promise((resolve, reject) => {
         setTimeout(() => {
-          if (Math.random() < 0.1) { 
+          if (Math.random() < 0.1) {
             reject(new Error("Failed to send booking request"));
           } else {
             resolve();
           }
         }, 1000);
       });
-      console.log("BookForm submitted successfully with values:", values);
       resetForm();
+      setFormStatus("success");
+      setFormMessage("Booking request sent successfully!");
       successNotification("Booking request sent successfully!");
     } catch (error) {
-      console.error("Booking submission failed:", error);
+      setFormStatus("error");
+      setFormMessage("Failed to send booking request. Please try again.");
       toast.error("Failed to send booking request. Please try again.", {
         position: "bottom-right",
         duration: 3000,
@@ -80,6 +89,13 @@ const BookForm = () => {
         </p>
       </div>
 
+      {formStatus === "success" && (
+        <div className={styles.success} role="status">{formMessage}</div>
+      )}
+      {formStatus === "error" && (
+        <div className={styles.errorMessage} role="alert">{formMessage}</div>
+      )}
+
       <Formik
         validateOnBlur={false}
         initialValues={initialValues}
@@ -94,7 +110,7 @@ const BookForm = () => {
             <FieldInput as="textarea" name="comment" label="Comment" />
             <div className={styles.actions}>
               <Button type="submit" disabled={isSubmitting}>
-                {isSubmitting ? "Sending..." : "Send"}
+                {isSubmitting ? "Sending..." : <><span>Send</span><FaPaperPlane className={styles.sendIcon} /></>}
               </Button>
             </div>
           </Form>

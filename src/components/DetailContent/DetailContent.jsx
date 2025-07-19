@@ -11,6 +11,7 @@ import ReviewList from "../ReviewList/ReviewList";
 import { TAB_NAMES } from "../../const";
 import useScrollToAnchor from "../../hooks/useScrollToAnchor";
 import styles from "./DetailContent.module.css";
+import { FaArrowLeft } from "react-icons/fa";
 
 const TABS = [TAB_NAMES.FEATURES, TAB_NAMES.REVIEWS];
 
@@ -49,6 +50,13 @@ const DetailContent = ({ data }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>
+        <button
+          type="button"
+          onClick={() => window.history.back()}
+          className={styles.backButton}
+        >
+          <FaArrowLeft />
+        </button>
         <div className={styles.nameRow}>
           <DetailName name={name} overflow={false} />
           <Rating

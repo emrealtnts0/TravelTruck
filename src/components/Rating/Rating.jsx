@@ -3,6 +3,7 @@ import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { ROUTERS, TAB_NAMES } from "../../const";
 import styles from "./Rating.module.css";
+import { FaArrowRight } from "react-icons/fa";
 
 const Rating = ({
   id,
@@ -24,6 +25,7 @@ const Rating = ({
         className={styles.ratingLink}
       >
         {ratingText}
+        <FaArrowRight className={styles.ratingLinkIcon} />
       </Link>
     );
   };

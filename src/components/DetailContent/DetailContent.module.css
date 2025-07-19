@@ -8,16 +8,44 @@
   display: flex;
   gap: 28px;
   flex-direction: column;
+  position: relative;
+}
+
+.backButton {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--color-button);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5em 0.85em;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  z-index: 2;
+  transition: background 0.18s;
+}
+.backButton:hover, .backButton:focus {
+  background: var(--color-button-hover);
 }
 
 .content {
   display: flex;
   gap: 24px;
   flex-direction: column;
+  align-items: stretch;
+  min-height: 0;
 }
 
 .contentSide {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .footer {

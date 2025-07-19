@@ -18,18 +18,31 @@
 
 @media (max-width: 767px) {
   .wrapper {
+    width: 100%;
     flex-direction: column;
     align-items: center;
   }
-  
   .image {
-    max-width: var(--image-max-width);
     width: 100%;
+    max-width: none;
+    height: 220px;
+    aspect-ratio: unset;
+    display: block;
+    object-fit: cover;
+    border-radius: 8px;
   }
 }
 
 @media (min-width: 768px) {
   .wrapper {
     gap: var(--gap-desktop);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1439px) {
+  .image {
+    max-width: 650px;
+    height: 360px;
+    width: 100%;
   }
 }

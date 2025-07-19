@@ -7,3 +7,8 @@
   border-bottom: 1px solid var(--color-grey-light);
   margin-bottom: 24px;
 }
+
+:global([data-theme="dark"]) .name {
+  color: #fff;
+  border-bottom: 1px solid var(--color-border);
+}

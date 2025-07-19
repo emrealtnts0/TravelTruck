@@ -94,6 +94,19 @@
   border-color: var(--color-button);
 }
 
+:global([data-theme="dark"]) .locationField {
+  background: var(--color-card);
+  color: var(--color-text);
+  border: 1.5px solid var(--color-border);
+}
+:global([data-theme="dark"]) .locationField::placeholder {
+  color: #E0E0E0;
+  opacity: 1;
+}
+:global([data-theme="dark"]) label {
+  color: var(--color-placeholder);
+}
+
 @media only screen and (min-width: 768px) {
   .filterList {
     row-gap: 8px;

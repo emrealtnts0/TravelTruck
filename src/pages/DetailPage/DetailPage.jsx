@@ -6,6 +6,7 @@ import DetailContent from "../../components/DetailContent/DetailContent";
 import Message from "../../components/Message/Message";
 import { fetchDetail } from "../../api";
 import styles from "./DetailPage.module.css";
+import { FaArrowLeft } from "react-icons/fa";
 
 const DetailPage = () => {
   const [detail, setDetail] = useState(null);

@@ -4,8 +4,11 @@
 
   padding: var(--header-padding);
   border-bottom: 1px solid var(--color-badgets);
-  background-color: var(--color-inputs);
+  background-color: var(--color-header, var(--color-card));
   height: var(--header-height);
+  position: relative;
+  z-index: 20;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .container {
@@ -47,22 +50,32 @@
   color: var(--color-text);
 }
 
+.navAndToggle {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+}
+
 @media (max-width: 767px) {
+  .header {
+    --header-height: 64px;
+    padding: 10px 0;
+    min-height: 93px;
+  }
   .wrapper {
     flex-direction: column;
     justify-content: center;
-    gap: 8px;
+    
   }
-
   .navWrapper {
     position: static;
     transform: none;
   }
-
   .brand {
     font-size: 18px;
+    padding-top:10px;
   }
-
   .nav {
     gap: 12px;
   }

@@ -9,6 +9,7 @@ import {
 } from "../../redux/catalog/selectors";
 import CatalogCard from "../CatalogCard/CatalogCard";
 import Loader from "../Loader/Loader";
+import SkeletonCard from "../Loader/SkeletonCard";
 import Button from "../Button/Button";
 import Message from "../Message/Message";
 import { fetchMore } from "../../redux/catalog/operations";
@@ -35,7 +36,13 @@ const CatalogList = () => {
   }, [dispatch, page]);
 
   if (loading && isEmpty) {
-    return <Loader />;
+    return (
+      <div className={styles.wrapper}>
+        {[...Array(3)].map((_, i) => (
+          <SkeletonCard key={i} />
+        ))}
+      </div>
+    );
   }
 
   if (error) {
@@ -62,6 +69,7 @@ const CatalogList = () => {
         <div className={styles.loadMore}>
           <Button
             variant="secondary"
+            className={styles.loadMoreButton}
             onClick={handleLoadMore}
             disabled={loading}
           >
